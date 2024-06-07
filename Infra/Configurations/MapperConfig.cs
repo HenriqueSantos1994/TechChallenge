@@ -9,7 +9,8 @@ namespace Infra.Configurations
         public MapperConfig()
         {
             CreateMap<ClienteResponse, Cliente>().ReverseMap();
-            CreateMap<ProdutoResponse, Produto>().ReverseMap();
+            CreateMap<ProdutoResponse, Produto>().ReverseMap()
+                .ForMember(x => x.NomeCategoria, y => y.MapFrom(x => x.CategoriaProduto.Nome));
             CreateMap<FormaPagamentoResponse, FormaPagamento>().ReverseMap();
             CreateMap<PedidoResponse, Pedido>().ReverseMap();
         }
