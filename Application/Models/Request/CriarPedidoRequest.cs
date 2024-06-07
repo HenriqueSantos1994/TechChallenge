@@ -13,10 +13,10 @@ namespace Application.Models.Request
         public List<int> IdsProdutos { get; set; }
 
         [Required(ErrorMessage = "É obrigatório informar uma FORMA DE PAGAMENTO para finalizar o pedido.")]
-        [JsonPropertyName("id_forma_pagamento")]
+        [JsonPropertyName("idFormaPagamento")]
         public int IdFormaPagamento { get; set; }
 
-        [JsonPropertyName("valor_total")]
+        [JsonPropertyName("valorTotal")]
         public double ValorTotal { get; set; }
     }
 

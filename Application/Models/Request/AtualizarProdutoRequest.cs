@@ -14,15 +14,15 @@ namespace Application.Models.Request
         public string Nome { get; set; }
 
         [Required(ErrorMessage = "É obrigatório informar a Descricao.")]
-        [JsonPropertyName("Descricao")]
+        [JsonPropertyName("descricao")]
         public string Descricao { get; set; }
 
         [Required(ErrorMessage = "É obrigatório informar o Valor.")]
-        [JsonPropertyName("Valor")]
+        [JsonPropertyName("valor")]
         public double Valor { get; set; }//{ get => String.Format("{0:0.00}", _valor); set => _valor = Convert.ToDouble(value); }
 
         [Required(ErrorMessage = "É obrigatório informar o nome da Categoria.")]
-        [JsonPropertyName("nome_categoria")]
+        [JsonPropertyName("nomeCategoria")]
         public string NomeCategoria { get; set; }
     }
 }
