@@ -9,9 +9,10 @@ services:
     depends_on:
       - databasesqlserver
     environment:
+      ASPNETCORE_ENVIRONMENT: Development
       SQLServerConnection: "Data Source=databasesqlserver;Initial Catalog=ByteMeBurguer;TrustServerCertificate=True;Persist Security Info=True;User ID=SA;Password=TechChallenge#api"
     ports:
-      - 5001:80
+      - 5001:8080
       
   databasesqlserver:
     image: mcr.microsoft.com/mssql/server:2019-latest
