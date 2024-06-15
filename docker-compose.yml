@@ -11,7 +11,9 @@ services:
     environment:
       SQLServerConnection: "Data Source=databasesqlserver;Initial Catalog=ByteMeBurguer;TrustServerCertificate=True;Persist Security Info=True;User ID=SA;Password=TechChallenge#api"
     ports:
-      - 5001:80
+      - "5001:8080"
+    networks: 
+      - techchallengenet
       
   databasesqlserver:
     image: mcr.microsoft.com/mssql/server:2019-latest
@@ -21,8 +23,8 @@ services:
       - MSSQL_SA_PASSWORD=TechChallenge#api
     ports:
       - 1450:1433
-    volumes:
-      - C:\SQL:/var/opt/mssql/data
+    networks: 
+      - techchallengenet
 
 networks:
   techchallengenet:
