@@ -11,7 +11,7 @@ services:
     environment:
       SQLServerConnection: "Data Source=databasesqlserver;Initial Catalog=ByteMeBurguer;TrustServerCertificate=True;Persist Security Info=True;User ID=SA;Password=TechChallenge#api"
     ports:
-      - "8080:80"
+      - "5001:8080"
     networks: 
       - techchallengenet
       

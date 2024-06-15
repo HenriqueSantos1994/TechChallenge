@@ -14,14 +14,14 @@ builder.Services.RegisterDependence();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+//if (app.Environment.IsDevelopment())
+//{
     app.UseSwagger();
     app.UseSwaggerUI(s =>
     {
         s.SwaggerEndpoint("/swagger/v1/swagger.json", "Tech Challenge");
     });
-}
+//}
 
 app.MigrationInitial();
 

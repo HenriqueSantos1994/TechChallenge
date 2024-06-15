@@ -1,5 +1,5 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
-EXPOSE 80
+EXPOSE 8080
 WORKDIR /app
 
 COPY API/API.csproj ./
