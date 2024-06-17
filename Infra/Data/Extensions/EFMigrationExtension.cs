@@ -1,10 +1,10 @@
-﻿using Domain.Entities;
-using Infra.Configurations;
+﻿using FIAP.TechChallenge.ByteMeBurguer.Domain.Entities;
+using FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Infra.Extensions
+namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Extensions
 {
     public static class EFMigrationExtension
     {

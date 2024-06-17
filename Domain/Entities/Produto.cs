@@ -1,4 +1,4 @@
-﻿namespace Domain.Entities
+﻿namespace FIAP.TechChallenge.ByteMeBurguer.Domain.Entities
 {
     public class Produto : EntityBase
     {

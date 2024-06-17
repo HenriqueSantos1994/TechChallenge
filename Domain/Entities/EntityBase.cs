@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Domain.Entities
+namespace FIAP.TechChallenge.ByteMeBurguer.Domain.Entities
 {
     public abstract class EntityBase
     {

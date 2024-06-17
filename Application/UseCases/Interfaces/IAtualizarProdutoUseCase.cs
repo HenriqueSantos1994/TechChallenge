@@ -1,6 +1,6 @@
-﻿using Application.Models.Request;
+﻿using FIAP.TechChallenge.ByteMeBurguer.Application.Models.Request;
 
-namespace Application.UseCases.Interfaces
+namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces
 {
     public interface IAtualizarProdutoUseCase : IUseCase<AtualizarProdutoRequest, bool>
     {

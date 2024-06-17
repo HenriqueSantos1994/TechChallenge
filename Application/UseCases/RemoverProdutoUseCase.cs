@@ -1,7 +1,7 @@
-﻿using Application.UseCases.Interfaces;
-using Domain.Repositories;
+﻿using FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces;
+using FIAP.TechChallenge.ByteMeBurguer.Domain.Repositories;
 
-namespace Application.UseCases
+namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
 {
     public class RemoverProdutoUseCase : IRemoverProdutoUseCase
     {

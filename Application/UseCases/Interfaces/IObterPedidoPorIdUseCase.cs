@@ -1,6 +1,6 @@
-﻿using Application.Models.Response;
+﻿using FIAP.TechChallenge.ByteMeBurguer.Application.Models.Response;
 
-namespace Application.UseCases.Interfaces
+namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces
 {
     public interface IObterPedidoPorIdUseCase : IUseCase<int, PedidoResponse>
     {

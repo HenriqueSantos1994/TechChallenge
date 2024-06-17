@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Text.Json.Serialization;
 
-namespace Application.Models.Request
+namespace FIAP.TechChallenge.ByteMeBurguer.Application.Models.Request
 {
     public class CriarProdutoRequest
     {

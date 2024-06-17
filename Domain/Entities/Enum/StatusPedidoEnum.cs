@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Domain.Entities.Enum
+namespace FIAP.TechChallenge.ByteMeBurguer.Domain.Entities.Enum
 {
     public enum StatusPedidoEnum
     {

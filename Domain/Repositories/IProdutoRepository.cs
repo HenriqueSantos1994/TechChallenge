@@ -1,6 +1,6 @@
-﻿using Domain.Entities;
+﻿using FIAP.TechChallenge.ByteMeBurguer.Domain.Entities;
 
-namespace Domain.Repositories
+namespace FIAP.TechChallenge.ByteMeBurguer.Domain.Repositories
 {
     public interface IProdutoRepository
     {

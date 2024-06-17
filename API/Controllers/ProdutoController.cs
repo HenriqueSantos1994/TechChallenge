@@ -1,8 +1,8 @@
-﻿using Application.Models.Request;
-using Application.UseCases.Interfaces;
+﻿using FIAP.TechChallenge.ByteMeBurguer.Application.Models.Request;
+using FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
-namespace API.Controllers
+namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]

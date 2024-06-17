@@ -1,14 +1,13 @@
-﻿using Application.UseCases;
-using Application.UseCases.Interfaces;
-using AutoMapper;
-using Domain.Repositories;
-using Infra.Configurations;
-using Infra.Repositories;
+﻿using AutoMapper;
+using FIAP.TechChallenge.ByteMeBurguer.Application.UseCases;
+using FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces;
+using FIAP.TechChallenge.ByteMeBurguer.Domain.Repositories;
+using FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations;
+using FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
 
-namespace Infra.Extensions
+namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Extensions
 {
     public static class ServiceExtension
     {

@@ -1,5 +1,3 @@
-using Infra.Extensions;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,7 +7,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.RegisterDependence();
+//builder.Services.RegisterDependence();
 
 var app = builder.Build();
 
@@ -23,7 +21,7 @@ var app = builder.Build();
     });
 //}
 
-app.MigrationInitial();
+//app.MigrationInitial();
 
 app.UseHttpsRedirection();
 
