@@ -1,9 +1,9 @@
 # Tech Challenge - FIAP - Grupo 12
 
 ## Descrição
-Este repositóri contém o codigo-fonte de uma api para garenciamento para lanchonete, conforme desafio técnico proposto nas
-disciplinas de Arquitetura de Software da Pós Tech - FIAP. Esta API está desenvolvida em .NET 8, e tem por objetivo gerenciar as principais operações da lanchonete,
-considerando o cadastro de clientes, produtos, criação e acompanhamento de pedidos, e pagamentos, integrando-se ao Mercado Pago.
+Este repositório contém o codigo-fonte de uma api de garenciamento para lanchonete, conforme desafio técnico proposto nas
+disciplinas de Arquitetura de Software da Pós Tech - FIAP. Esta API está desenvolvida em .NET 8, e tem por objetivo gerenciar as principais operações de uma lanchonete,
+considerando o cadastro de clientes, produtos, criação e acompanhamento de pedidos, e pagamentos.
 
 ## Inicialização
 
@@ -37,4 +37,4 @@ considerando o cadastro de clientes, produtos, criação e acompanhamento de ped
    ```
 
 ### Collections
---Insere guia das coleções do postman
+//TODO: Insere guia das coleções do postman
