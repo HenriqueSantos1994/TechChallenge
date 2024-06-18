@@ -1,37 +1,40 @@
 # Tech Challenge - FIAP - Grupo 12
 
-## DescriÁ„o
-Este repositÛri contÈm o codigo-fonte de uma api para garenciamento para lanchonete, conforme desafio tÈcnico proposto nas
-disciplinas de Arquitetura de Software da PÛs Tech - FIAP. Esta API est· desenvolvida em .NET 8, e tem por objetivo gerenciar as principais operaÁıes da lanchonete,
-considerando o cadastro de clientes, produtos, criaÁ„o e acompanhamento de pedidos, e pagamentos, integrando-se ao Mercado Pago.
+## Descri√ß√£o
+Este reposit√≥ri cont√©m o codigo-fonte de uma api para garenciamento para lanchonete, conforme desafio t√©cnico proposto nas
+disciplinas de Arquitetura de Software da P√≥s Tech - FIAP. Esta API est√° desenvolvida em .NET 8, e tem por objetivo gerenciar as principais opera√ß√µes da lanchonete,
+considerando o cadastro de clientes, produtos, cria√ß√£o e acompanhamento de pedidos, e pagamentos, integrando-se ao Mercado Pago.
 
-## Getting Started
+## Inicializa√ß√£o
 
-### PrÈ-Requisitos
+### Pr√©-Requisitos
 - Docker
 - .NET SDK
 - Opcionalmente, uma IDE como o Visual Studio ou VSCode
 
 
-### ConfiguraÁ„o
-1. Clone o repositÛrio:
+### Configura√ß√£o
+1. Clone o reposit√≥rio:
    ```bash
    git clone https://github.com/HenriqueSantos1994/TechChallenge.git
     ```
 
-2. Inicie o serviÁo utilizando Docker:
+2. Inicie o servi√ßo utilizando Docker:
 
    ```bash
     docker-compose up -d
    ```
 
-3. Acesse o swagger da aplicaÁ„o para ter acesso a todos os endpoints
+3. Acesse o swagger da aplica√ß√£o para ter acesso a todos os endpoints
 
    > [http://localhost:5001/swagger/index.html](http://localhost:5001/swagger/index.html)
 
 
-8. Para finalizar o serviÁo utilizando docker, execute:
+4. Para finalizar o servi√ßo utilizando docker, execute:
 
    ```bash
     docker-compose down
    ```
+
+### Collections
+--Insere guia das cole√ß√µes do postman
