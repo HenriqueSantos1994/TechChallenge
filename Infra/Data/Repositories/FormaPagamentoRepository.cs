@@ -4,7 +4,7 @@ using FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations;
 
 namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
 {
-    internal class FormaPagamentoRepository : IFormaPagamentoRepository
+    public class FormaPagamentoRepository : IFormaPagamentoRepository
     {
         private readonly ApplicationDbContext _context;
 
