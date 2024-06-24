@@ -1,10 +1,10 @@
-﻿using Domain.Entities;
-using Domain.Repositories;
-using Infra.Configurations;
+﻿using FIAP.TechChallenge.ByteMeBurguer.Domain.Entities;
+using FIAP.TechChallenge.ByteMeBurguer.Domain.Repositories;
+using FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations;
 
-namespace Infra.Repositories
+namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
 {
-    internal class FormaPagamentoRepository : IFormaPagamentoRepository
+    public class FormaPagamentoRepository : IFormaPagamentoRepository
     {
         private readonly ApplicationDbContext _context;
 

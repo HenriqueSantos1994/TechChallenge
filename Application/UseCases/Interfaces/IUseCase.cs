@@ -1,6 +1,6 @@
-﻿namespace Application.UseCases.Interfaces
+﻿namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces
 {
-    public interface IUseCase<T1,T2>
+    public interface IUseCase<T1, T2>
     {
         Task<T2> Execute(T1 request);
     }

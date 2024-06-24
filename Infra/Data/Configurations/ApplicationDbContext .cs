@@ -1,7 +1,7 @@
-﻿using Domain.Entities;
+﻿using FIAP.TechChallenge.ByteMeBurguer.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infra.Configurations
+namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations
 {
     public class ApplicationDbContext : DbContext
     {

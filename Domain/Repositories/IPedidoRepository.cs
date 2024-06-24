@@ -1,7 +1,7 @@
-﻿using Domain.Entities;
-using Domain.Entities.Enum;
+﻿using FIAP.TechChallenge.ByteMeBurguer.Domain.Entities;
+using FIAP.TechChallenge.ByteMeBurguer.Domain.Entities.Enum;
 
-namespace Domain.Repositories
+namespace FIAP.TechChallenge.ByteMeBurguer.Domain.Repositories
 {
     public interface IPedidoRepository
     {

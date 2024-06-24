@@ -1,4 +1,4 @@
-﻿namespace Application.Models.Response
+﻿namespace FIAP.TechChallenge.ByteMeBurguer.Application.Models.Response
 {
     public class PedidoResponse
     {

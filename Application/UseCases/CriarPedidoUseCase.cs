@@ -1,10 +1,10 @@
-﻿using Application.Models.Request;
-using Application.UseCases.Interfaces;
-using Domain.Entities;
-using Domain.Entities.Enum;
-using Domain.Repositories;
+﻿using FIAP.TechChallenge.ByteMeBurguer.Domain.Entities;
+using FIAP.TechChallenge.ByteMeBurguer.Application.Models.Request;
+using FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces;
+using FIAP.TechChallenge.ByteMeBurguer.Domain.Entities.Enum;
+using FIAP.TechChallenge.ByteMeBurguer.Domain.Repositories;
 
-namespace Application.UseCases
+namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
 {
     public class CriarPedidoUseCase : ICriarPedidoUseCase
     {

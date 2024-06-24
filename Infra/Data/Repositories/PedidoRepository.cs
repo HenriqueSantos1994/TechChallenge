@@ -1,10 +1,10 @@
-﻿using Domain.Entities;
-using Domain.Entities.Enum;
-using Domain.Repositories;
-using Infra.Configurations;
+﻿using FIAP.TechChallenge.ByteMeBurguer.Domain.Entities;
+using FIAP.TechChallenge.ByteMeBurguer.Domain.Entities.Enum;
+using FIAP.TechChallenge.ByteMeBurguer.Domain.Repositories;
+using FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infra.Repositories
+namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
 {
     public class PedidoRepository : IPedidoRepository
     {

@@ -1,21 +1,21 @@
-﻿using Application.UseCases;
-using Application.UseCases.Interfaces;
-using AutoMapper;
-using Domain.Repositories;
-using Infra.Configurations;
-using Infra.Repositories;
+﻿using AutoMapper;
+using FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces;
+using FIAP.TechChallenge.ByteMeBurguer.Application.UseCases;
+using FIAP.TechChallenge.ByteMeBurguer.Domain.Repositories;
+using FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories;
+using FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations;
+using FIAP.TechChallenge.ByteMeBurguer.Application;
+using FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Extensions;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Configuration;
 
-namespace Infra.Extensions
+namespace FIAP.TechChallenge.ByteMeBurguer.API.Extensions
 {
-    public static class ServiceExtension
+    public static class DependencyInjection
     {
-        public static void RegisterDependence(this IServiceCollection services)
+        public static IServiceCollection AddProjectDependencies(this IServiceCollection services)
         {
-            services.RegisterEntityFramework();
-
+  
             //AutoMapper
             var mapperConfig = new MapperConfiguration(mc =>
             {
@@ -44,14 +44,12 @@ namespace Infra.Extensions
             services.AddTransient<IObterProdutoPorCategoriaUseCase, ObterProdutoPorCategoriaUseCase>();
             services.AddTransient<IRemoverProdutoUseCase, RemoverProdutoUseCase>();
 
-        }
+            //Infra Data
+            services.AddDbContext<ApplicationDbContext>(options =>
+                options.UseSqlServer(Environment.GetEnvironmentVariable("SQLServerConnection")));
+            services.AddScoped<IDatabaseInitializer, DatabaseInitializer>();
 
-        private static void RegisterEntityFramework(this IServiceCollection services)
-        {
-            //EF Configurations
-            var connectionString = Environment.GetEnvironmentVariable("SQLServerConnection");
-            Console.WriteLine(connectionString);
-            services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(connectionString));
+            return services;
         }
     }
 }

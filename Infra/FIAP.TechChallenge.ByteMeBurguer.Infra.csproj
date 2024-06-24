@@ -21,8 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application\Application.csproj" />
-    <ProjectReference Include="..\Domain\Domain.csproj" />
+    <ProjectReference Include="..\Application\FIAP.TechChallenge.ByteMeBurguer.Application.csproj" />
+    <ProjectReference Include="..\Domain\FIAP.TechChallenge.ByteMeBurguer.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="PaymentGateway\" />
   </ItemGroup>
 
 </Project>

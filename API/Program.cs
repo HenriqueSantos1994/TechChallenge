@@ -1,15 +1,17 @@
-using Infra.Extensions;
+using FIAP.TechChallenge.ByteMeBurguer.API.Extensions;
+using FIAP.TechChallenge.ByteMeBurguer.Application;
+//using FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-Thread.Sleep(15000);
+//Thread.Sleep(15000);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.RegisterDependence();
+builder.Services.AddProjectDependencies();
 
 var app = builder.Build();
 
@@ -23,7 +25,12 @@ var app = builder.Build();
     });
 //}
 
-app.MigrationInitial();
+//app.MigrationInitial();
+using (var scope = app.Services.CreateScope())
+{
+    var initializer = scope.ServiceProvider.GetRequiredService<IDatabaseInitializer>();
+    initializer.Initialize();
+}
 
 app.UseHttpsRedirection();
 
