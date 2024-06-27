@@ -2,7 +2,7 @@
 
 namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces
 {
-    public interface IAtualizarProdutoUseCase : IUseCase<AtualizarProdutoRequest, bool>
+    public interface IAtualizarProdutoUseCase : IUseCaseAsync<AtualizarProdutoRequest, bool>
     {
     }
 }

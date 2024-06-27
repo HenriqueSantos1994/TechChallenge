@@ -2,7 +2,7 @@
 
 namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces
 {
-    public interface ICriarPedidoUseCase : IUseCase<CriarPedidoRequest, string>
+    public interface ICriarPedidoUseCase : IUseCaseAsync<CriarPedidoRequest, string>
     {
     }
 }

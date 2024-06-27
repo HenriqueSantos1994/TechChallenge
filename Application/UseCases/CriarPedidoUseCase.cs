@@ -30,16 +30,16 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
             Cliente cliente = null;
 
             if (!string.IsNullOrEmpty(request.CpfCliente))
-                cliente = await _clienteRepository.GetByCpf(request.CpfCliente);
+                cliente = _clienteRepository.GetByCpf(request.CpfCliente);
 
-            var pagamento = await _formaPagamentoRepository.GetById(request.IdFormaPagamento);
+            var pagamento = _formaPagamentoRepository.GetById(request.IdFormaPagamento);
 
 
             var produtos = new List<Produto>();
 
-            request.IdsProdutos.ForEach(async x =>
+            request.IdsProdutos.ForEach(x =>
             {
-                produtos.Add(await _produtoRepository.GetById(x));
+                produtos.Add(_produtoRepository.GetById(x));
             });
 
             var pedido = new Pedido()

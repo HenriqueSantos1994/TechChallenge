@@ -13,7 +13,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             _context = context;
         }
 
-        public async Task<IList<Cliente>> GetAll()
+        public IList<Cliente> GetAll()
         {
             try
             {
@@ -25,7 +25,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             }
         }
 
-        public async Task<Cliente> GetByCpf(string cpf)
+        public Cliente GetByCpf(string cpf)
         {
             try
             {
@@ -37,7 +37,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             }
         }
 
-        public async Task<Cliente> GetById(int id)
+        public Cliente GetById(int id)
         {
             try
             {
@@ -49,13 +49,13 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             }
         }
 
-        public async Task<int> Post(Cliente cliente)
+        public async Task<Cliente> Post(Cliente cliente)
         {
             try
             {
                 _context.Clientes.Add(cliente);
                 await _context.SaveChangesAsync();
-                return 123;
+                return cliente;
             }
             catch (Exception ex)
             {

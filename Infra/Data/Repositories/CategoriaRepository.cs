@@ -12,7 +12,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
         {
             _context = context;
         }
-        public async Task<IList<Categoria>> GetAll()
+        public IList<Categoria> GetAll()
         {
             try
             {
@@ -24,7 +24,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             }
         }
 
-        public async Task<Categoria> GetByName(string nome)
+        public Categoria GetByName(string nome)
         {
             try
             {
