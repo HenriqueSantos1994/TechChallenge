@@ -27,11 +27,11 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
         }
 
         [HttpGet("{categoria}")]
-        public async Task<IActionResult> ObterPorCategoria(string categoria)
+        public IActionResult ObterPorCategoria(string categoria)
         {
             try
             {
-                var result = await _obterProdutoPorCategoria.Execute(categoria);
+                var result = _obterProdutoPorCategoria.Execute(categoria);
                 return Ok(result);
             }
             catch (Exception ex)

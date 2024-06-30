@@ -20,11 +20,11 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
         }
 
         [HttpGet("{cpf}")]
-        public async Task<IActionResult> ObterClientePorCpf(string cpf)
+        public IActionResult ObterClientePorCpf(string cpf)
         {
             try
             {
-                var result = await _obterClientePorCpf.Execute(cpf);
+                var result = _obterClientePorCpf.Execute(cpf);
                 return Ok(result);
             }
             catch (Exception ex)

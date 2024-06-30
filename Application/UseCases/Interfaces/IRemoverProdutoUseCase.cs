@@ -1,6 +1,6 @@
 ﻿namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces
 {
-    public interface IRemoverProdutoUseCase : IUseCase<int, bool>
+    public interface IRemoverProdutoUseCase : IUseCaseAsync<int, bool>
     {
     }
 }

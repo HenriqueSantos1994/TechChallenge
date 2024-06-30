@@ -37,11 +37,11 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
         }
 
         [HttpGet("{Id}")]
-        public async Task<IActionResult> ObterPedidoPorId(int Id)
+        public IActionResult ObterPedidoPorId(int Id)
         {
             try
             {
-                var result = await _obterPedidoPorId.Execute(Id);
+                var result = _obterPedidoPorId.Execute(Id);
                 return Ok(result);
             }
             catch (Exception ex)
@@ -51,11 +51,11 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ObterPedidos()
+        public IActionResult ObterPedidos()
         {
             try
             {
-                var result = await _obterPedidos.Execute();
+                var result = _obterPedidos.Execute();
                 return Ok(result);
             }
             catch (Exception ex)

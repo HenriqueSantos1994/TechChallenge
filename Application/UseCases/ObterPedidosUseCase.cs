@@ -17,9 +17,9 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
             _mapper = mapper;
         }
 
-        public async Task<IList<PedidoResponse>> Execute()
+        public IList<PedidoResponse> Execute()
         {
-            var result = await _pedidoRepository.GetAll();
+            var result = _pedidoRepository.GetAll();
 
             return _mapper.Map<IList<PedidoResponse>>(result);
         }

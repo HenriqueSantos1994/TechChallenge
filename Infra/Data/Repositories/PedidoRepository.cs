@@ -15,7 +15,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             _context = context;
         }
 
-        public async Task<IList<Pedido>> GetAll()
+        public IList<Pedido> GetAll()
         {
             try
             {
@@ -32,7 +32,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             }
         }
 
-        public async Task<Pedido> GetById(int Id)
+        public Pedido GetById(int Id)
         {
             try
             {
@@ -49,7 +49,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             }
         }
 
-        public async Task<IList<Pedido>> GetByStatus(StatusPedidoEnum status)
+        public IList<Pedido> GetByStatus(StatusPedidoEnum status)
         {
             try
             {

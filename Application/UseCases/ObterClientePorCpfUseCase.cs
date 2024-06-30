@@ -17,9 +17,9 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
             _mapper = mapper;
         }
 
-        public async Task<ClienteResponse> Execute(string cpf)
+        public ClienteResponse Execute(string cpf)
         {
-            var result = await _clienteRepository.GetByCpf(cpf);
+            var result = _clienteRepository.GetByCpf(cpf);
 
             return _mapper.Map<ClienteResponse>(result);
         }

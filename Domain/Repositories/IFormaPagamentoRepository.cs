@@ -4,7 +4,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Domain.Repositories
 {
     public interface IFormaPagamentoRepository
     {
-        Task<IList<FormaPagamento>> GetAll();
-        Task<FormaPagamento> GetById(int id);
+        IList<FormaPagamento> GetAll();
+        FormaPagamento GetById(int id);
     }
 }

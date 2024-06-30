@@ -13,7 +13,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             _context = context;
         }
 
-        public async Task<IList<FormaPagamento>> GetAll()
+        public IList<FormaPagamento> GetAll()
         {
             try
             {
@@ -25,7 +25,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             }
         }
 
-        public async Task<FormaPagamento> GetById(int id)
+        public FormaPagamento GetById(int id)
         {
             try
             {

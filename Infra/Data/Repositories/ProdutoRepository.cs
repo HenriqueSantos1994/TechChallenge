@@ -27,7 +27,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             }
         }
 
-        public async Task<Produto> GetById(int Id)
+        public Produto GetById(int Id)
         {
             try
             {
@@ -41,7 +41,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             }
         }
 
-        public async Task<IList<Produto>> GetAll()
+        public IList<Produto> GetAll()
         {
             try
             {
@@ -54,7 +54,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             }
         }
 
-        public async Task<IList<Produto>> GetByCategoria(int IdCategoria)
+        public IList<Produto> GetByCategoria(int IdCategoria)
         {
             try
             {
