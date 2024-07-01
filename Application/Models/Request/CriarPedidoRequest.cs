@@ -9,8 +9,8 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.Models.Request
         public string CpfCliente { get; set; }
 
         [Required(ErrorMessage = "É obrigatório informar ao menos 1 PRODUTO para finalizar o pedido.")]
-        [JsonPropertyName("produtos")]
-        public List<int> IdsProdutos { get; set; }
+        [JsonPropertyName("produtoQuantidades")]
+        public List<ProdutoQuantidade> ProdutosQuantidade { get; set; }
 
         [Required(ErrorMessage = "É obrigatório informar uma FORMA DE PAGAMENTO para finalizar o pedido.")]
         [JsonPropertyName("idFormaPagamento")]

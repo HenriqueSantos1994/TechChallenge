@@ -22,8 +22,8 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
                 return _context.Pedidos
                     .Include(x => x.Cliente)
                     .Include(x => x.FormaPagamento)
-                    .Include(x => x.Produtos)
-                        .ThenInclude(p => p.CategoriaProduto)
+                    .Include(x => x.PedidoProdutos)
+                        .ThenInclude(p => p.Produto.CategoriaProduto)
                     .ToList();
             }
             catch (Exception ex)
@@ -39,8 +39,8 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
                 return _context.Pedidos
                     .Include(x => x.Cliente)
                     .Include(x => x.FormaPagamento)
-                    .Include(x => x.Produtos)
-                        .ThenInclude(p => p.CategoriaProduto)
+                    .Include(x => x.PedidoProdutos)
+                        .ThenInclude(p => p.Produto.CategoriaProduto)
                     .FirstOrDefault(x => x.Id == Id);
             }
             catch (Exception ex)
@@ -56,8 +56,8 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
                 return _context.Pedidos
                     .Include(x => x.Cliente)
                     .Include(x => x.FormaPagamento)
-                    .Include(x => x.Produtos)
-                        .ThenInclude(p => p.CategoriaProduto)
+                    .Include(x => x.PedidoProdutos)
+                        .ThenInclude(p => p.Produto.CategoriaProduto)
                     .Where(x => x.StatusPedido == (int)status).ToList();
             }
             catch (Exception ex)

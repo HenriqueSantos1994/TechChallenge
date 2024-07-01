@@ -12,6 +12,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations
         public DbSet<FormaPagamento> FormasPagamento { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<PedidoProduto> PedidoProdutos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -29,6 +30,9 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations
 
             modelBuilder.Entity<Categoria>()
                 .Property(x => x.Id).ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Categoria>()
+               .Property(x => x.Id).ValueGeneratedOnAdd();
 
             //modelBuilder.Entity<Categoria>().HasData(
             //    new Categoria { Id = 1, Nome = "Lanche" });

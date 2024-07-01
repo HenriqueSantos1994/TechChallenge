@@ -4,7 +4,7 @@
     {
         public Guid IdGuid { get; set; }
         public Cliente Cliente { get; set; }
-        public IList<Produto> Produtos { get; set; }
+        public IList<PedidoProduto> PedidoProdutos { get; set; }
         public FormaPagamento FormaPagamento { get; set; }
         public DateTime? DataCriacao { get; set; }
         public DateTime? DataPreparacao { get; set; }

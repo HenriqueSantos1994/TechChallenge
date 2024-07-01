@@ -31,22 +31,25 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
 
             if (!string.IsNullOrEmpty(request.CpfCliente))
                 cliente = _clienteRepository.GetByCpf(request.CpfCliente);
-
-            var pagamento = _formaPagamentoRepository.GetById(request.IdFormaPagamento);
-
-
-            var produtos = new List<Produto>();
-
-            request.IdsProdutos.ForEach(x =>
+            if (cliente == null)
             {
-                produtos.Add(_produtoRepository.GetById(x));
-            });
+                throw new Exception("Cliente não encontrado.");
+            }
+                
+            var formaPagamento = _formaPagamentoRepository.GetById(request.IdFormaPagamento) ?? throw new Exception("Forma de pagamento não encontrada.");
+            var pedidoProdutos = new List<PedidoProduto>();
+
+            foreach (var item in request.ProdutosQuantidade)    
+            {
+                var produto = _produtoRepository.GetById(item.IdProduto) ?? throw new Exception($"Produto com ID {item.IdProduto} não encontrado.");
+                pedidoProdutos.Add(new PedidoProduto { Produto = produto, Quantidade = item.Quantidade });
+            }
 
             var pedido = new Pedido()
             {
                 Cliente = cliente,
-                FormaPagamento = pagamento,
-                Produtos = produtos,
+                FormaPagamento = formaPagamento,
+                PedidoProdutos = pedidoProdutos,
                 DataCriacao = DateTime.Now,
                 StatusPedido = (int)StatusPedidoEnum.Recebido
             };
