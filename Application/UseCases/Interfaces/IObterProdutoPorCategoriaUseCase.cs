@@ -2,7 +2,7 @@
 
 namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces
 {
-    public interface IObterProdutoPorCategoriaUseCase : IUseCase<string, IList<ProdutoResponse>>
+    public interface IObterProdutoPorCategoriaUseCase : IUseCase<string, IList<ItensDePedidoResponse>>
     {
     }
 }

@@ -3,6 +3,8 @@ using FIAP.TechChallenge.ByteMeBurguer.Application.Models.Request;
 using FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces;
 using FIAP.TechChallenge.ByteMeBurguer.Domain.Entities.Enum;
 using FIAP.TechChallenge.ByteMeBurguer.Domain.Repositories;
+using FIAP.TechChallenge.ByteMeBurguer.Application.Models.Response;
+using AutoMapper;
 
 namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
 {
@@ -12,20 +14,23 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
         private readonly IClienteRepository _clienteRepository;
         private readonly IFormaPagamentoRepository _formaPagamentoRepository;
         private readonly IProdutoRepository _produtoRepository;
+        private readonly IMapper _mapper;
 
         public CriarPedidoUseCase(
             IPedidoRepository petoRepository,
             IClienteRepository clienteRepository,
             IFormaPagamentoRepository formaPagamentoRepository,
-            IProdutoRepository produtoRepository)
+            IProdutoRepository produtoRepository,
+            IMapper mapper)
         {
             _pedidoRepository = petoRepository;
             _clienteRepository = clienteRepository;
             _formaPagamentoRepository = formaPagamentoRepository;
             _produtoRepository = produtoRepository;
+            _mapper = mapper;   
         }
 
-        public async Task<string> Execute(CriarPedidoRequest request)
+        public async Task<PedidoResponse> Execute(CriarPedidoRequest request)
         {
             Cliente cliente = null;
 
@@ -37,26 +42,31 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
             }
                 
             var formaPagamento = _formaPagamentoRepository.GetById(request.IdFormaPagamento) ?? throw new Exception("Forma de pagamento não encontrada.");
-            var pedidoProdutos = new List<PedidoProduto>();
+            var itensDePedido = new List<ItemDePedido>();
 
             foreach (var item in request.ProdutosQuantidade)    
             {
                 var produto = _produtoRepository.GetById(item.IdProduto) ?? throw new Exception($"Produto com ID {item.IdProduto} não encontrado.");
-                pedidoProdutos.Add(new PedidoProduto { Produto = produto, Quantidade = item.Quantidade });
+                itensDePedido.Add(
+                    new ItemDePedido { 
+                        ProdutoId = produto.Id,
+                        Quantidade = item.Quantidade 
+                    });
             }
 
             var pedido = new Pedido()
             {
                 Cliente = cliente,
                 FormaPagamento = formaPagamento,
-                PedidoProdutos = pedidoProdutos,
+                ItensDePedido = itensDePedido,
                 DataCriacao = DateTime.Now,
-                StatusPedido = (int)StatusPedidoEnum.Recebido
+                StatusPedido = StatusPedido.Recebido
             };
 
-            var idPedido = await _pedidoRepository.Post(pedido);
+            var result = await _pedidoRepository.Post(pedido);
 
-            return $"Seu pedido foi criado! Número do seu pedido {idPedido}";
+            return _mapper.Map<PedidoResponse>(result); 
+
         }
     }
 }

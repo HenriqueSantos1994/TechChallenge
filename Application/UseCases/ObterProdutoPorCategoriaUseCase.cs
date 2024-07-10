@@ -18,12 +18,12 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
             _mapper = mapper;
         }
 
-        public IList<ProdutoResponse> Execute(string request)
+        public IList<ItensDePedidoResponse> Execute(string request)
         {
             var categoria = _categoriaRepository.GetByName(request);
             var result = _produtoRepository.GetByCategoria(categoria.Id);
 
-            return _mapper.Map<IList<ProdutoResponse>>(result);
+            return _mapper.Map<IList<ItensDePedidoResponse>>(result);
         }
     }
 }

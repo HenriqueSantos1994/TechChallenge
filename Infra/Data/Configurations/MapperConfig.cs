@@ -9,10 +9,16 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations
         public MapperConfig()
         {
             CreateMap<ClienteResponse, Cliente>().ReverseMap();
-            CreateMap<ProdutoResponse, Produto>().ReverseMap()
-                .ForMember(x => x.NomeCategoria, y => y.MapFrom(x => x.CategoriaProduto.Nome));
             CreateMap<FormaPagamentoResponse, FormaPagamento>().ReverseMap();
-            CreateMap<PedidoResponse, Pedido>().ReverseMap();
+            CreateMap<Pedido, PedidoResponse>()
+                .ForMember(dest => dest.ItensDePedido, opt => opt.MapFrom(src => src.ItensDePedido))
+                .ReverseMap();
+            CreateMap<ItemDePedido, ItensDePedidoResponse>()
+               .ForMember(dest => dest.Nome, opt => opt.MapFrom(src => src.Produto.Nome))
+               .ForMember(dest => dest.Descricao, opt => opt.MapFrom(src => src.Produto.Descricao))
+               .ForMember(dest => dest.Categoria, opt => opt.MapFrom(src => src.Produto.CategoriaProduto.Nome))
+               .ForMember(dest => dest.ValorUnitario, opt => opt.MapFrom(src => src.Produto.Valor))
+               .ReverseMap();
         }
     }
 }
