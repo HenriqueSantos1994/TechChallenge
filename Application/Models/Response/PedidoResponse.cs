@@ -3,13 +3,15 @@
     public class PedidoResponse
     {
         public int Id { get; set; }
-        public ClienteResponse Cliente { get; set; }
-        public IList<ProdutoResponse> Produtos { get; set; }
-        public FormaPagamentoResponse FormaPagamento { get; set; }
+        public Guid IdGuid { get; set; }
         public DateTime? DataCriacao { get; set; }
-        public DateTime? DataPreparacao { get; set; }
-        public DateTime? DataPronto { get; set; }
-        public DateTime? DataEncerrado { get; set; }
         public int StatusPedido { get; set; }
+        public decimal ValorTotal
+        {
+            get { return ItensDePedido?.Sum(item => item.Subtotal) ?? 0; }
+        }
+        public ClienteResponse Cliente { get; set; }
+        public FormaPagamentoResponse FormaPagamento { get; set; }
+        public IList<ItensDePedidoResponse> ItensDePedido { get; set; }
     }
 }
