@@ -9,15 +9,18 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
     public class PedidoController : Controller
     {
         private readonly IObterPedidosUseCase _obterPedidos;
+        private readonly IObterPedidosFiltradosUseCase _obterPedidosFiltrados;
         private readonly IObterPedidoPorIdUseCase _obterPedidoPorId;
         private readonly ICriarPedidoUseCase _criarPedido;
 
         public PedidoController(
             IObterPedidosUseCase obterPedidos,
+            IObterPedidosFiltradosUseCase obterPedidosFiltrados,
             IObterPedidoPorIdUseCase obterPedidoPorId,
             ICriarPedidoUseCase criarPedido)
         {
             _obterPedidos = obterPedidos;
+            _obterPedidosFiltrados = obterPedidosFiltrados;
             _obterPedidoPorId = obterPedidoPorId;
             _criarPedido = criarPedido;
         }
@@ -56,6 +59,19 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
             try
             {
                 var result = _obterPedidos.Execute();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+        [HttpGet("Filtrados")]
+        public IActionResult ObterPedidosFiltrados()
+        {
+            try
+            {
+                var result = _obterPedidosFiltrados.Execute();
                 return Ok(result);
             }
             catch (Exception ex)

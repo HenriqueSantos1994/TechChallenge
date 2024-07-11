@@ -9,6 +9,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Domain.Repositories
         Task Update(Pedido pedido, int Id);
         Pedido GetById(int Id);
         IList<Pedido> GetAll();
+        IList<Pedido> GetFiltrados();
         IList<Pedido> GetByStatus(StatusPedido status);
     }
 }
