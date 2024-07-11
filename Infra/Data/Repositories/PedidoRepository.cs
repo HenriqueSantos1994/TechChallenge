@@ -22,6 +22,8 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
                 return _context.Pedidos
                     .Include(x => x.Cliente)
                     .Include(x => x.FormaPagamento)
+                    .Include(x => x.ItensDePedido)
+                        .ThenInclude(y => y.Produto)
                     .ToList();
             }
             catch (Exception ex)
@@ -57,6 +59,28 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             catch (Exception ex)
             {
                 throw new Exception($"Erro ao consultar pedidos. {ex}");
+            }
+        }
+
+        public IList<Pedido> GetFiltrados()
+        {
+            try
+            {
+                return _context.Pedidos
+                    .Include(x => x.Cliente)
+                    .Include(x => x.FormaPagamento)
+                    .Include(x => x.ItensDePedido)
+                        .ThenInclude(y => y.Produto)
+                    .Where(x => x.StatusPedido != StatusPedido.Finalizado)
+                    .OrderBy(x => x.StatusPedido == StatusPedido.Pronto ? 0 :
+                                  x.StatusPedido == StatusPedido.EmPreparacao ? 1 :
+                                  x.StatusPedido == StatusPedido.Recebido ? 2 : 3)
+                    .ThenBy(x => x.DataCriacao)
+                    .ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception($"Erro ao consultar pedidos filtrados. {ex}");
             }
         }
 
