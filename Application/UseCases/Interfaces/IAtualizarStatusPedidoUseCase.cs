@@ -3,7 +3,7 @@ using FIAP.TechChallenge.ByteMeBurguer.Application.Models.Response;
 
 namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces
 {
-    public interface IAtualizarProdutoUseCase : IUseCaseAsync<AtualizarProdutoRequest, bool>
+    public interface IAtualizarStatusPedidoUseCase : IUseCaseAsync<AtualizarStatusPedidoRequest, bool>
     {
     }
 }

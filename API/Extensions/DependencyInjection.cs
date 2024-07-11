@@ -37,6 +37,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Extensions
             services.AddTransient<ICriarClienteUseCase, CriarClienteUseCase>();
             services.AddTransient<ICriarPedidoUseCase, CriarPedidoUseCase>();
             services.AddTransient<ICriarProdutoUseCase, CriarProdutoUseCase>();
+            services.AddTransient<IAtualizarStatusPedidoUseCase, AtualizarStatusPedidoUseCase>();
             services.AddTransient<IObterClientePorCpfUseCase, ObterClientePorCpfUseCase>();
             services.AddTransient<IObterClientesUseCase, ObterClientesUseCase>();
             services.AddTransient<IObterPedidoPorIdUseCase, ObterPedidoPorIdUseCase>();

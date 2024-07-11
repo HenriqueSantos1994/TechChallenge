@@ -12,17 +12,21 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
         private readonly IObterPedidosFiltradosUseCase _obterPedidosFiltrados;
         private readonly IObterPedidoPorIdUseCase _obterPedidoPorId;
         private readonly ICriarPedidoUseCase _criarPedido;
+        //private readonly IObterStatusPagamentoPedidoUseCase _obterStatusPagamentoPedido;
+        private readonly IAtualizarStatusPedidoUseCase _atualizarStatusPedido;
 
         public PedidoController(
             IObterPedidosUseCase obterPedidos,
             IObterPedidosFiltradosUseCase obterPedidosFiltrados,
             IObterPedidoPorIdUseCase obterPedidoPorId,
-            ICriarPedidoUseCase criarPedido)
+            ICriarPedidoUseCase criarPedido,
+            IAtualizarStatusPedidoUseCase atualizarStatusPedido)
         {
             _obterPedidos = obterPedidos;
             _obterPedidosFiltrados = obterPedidosFiltrados;
             _obterPedidoPorId = obterPedidoPorId;
             _criarPedido = criarPedido;
+            _atualizarStatusPedido = atualizarStatusPedido;
         }
 
         [HttpPost]
@@ -73,6 +77,20 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
             {
                 var result = _obterPedidosFiltrados.Execute();
                 return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpPut("StatusPedido")]
+        public IActionResult AtualizarStatusPedido([FromBody] AtualizarStatusPedidoRequest request)
+        {
+            try
+            {
+                _atualizarStatusPedido.Execute(request);
+                return NoContent();
             }
             catch (Exception ex)
             {
