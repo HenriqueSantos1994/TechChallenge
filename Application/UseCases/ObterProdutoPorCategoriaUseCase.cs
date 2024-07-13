@@ -20,7 +20,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
 
         public IList<ItensDePedidoResponse> Execute(string request)
         {
-            var result = new List<ProdutoResponse>();
+            var result = new List<ItensDePedidoResponse>();
             var categoria = _categoriaRepository.GetByName(request);
 
             if (categoria is null)
