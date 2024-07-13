@@ -74,7 +74,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
                 _context.Pedidos.Add(pedido);
                 await _context.SaveChangesAsync();
 
-                return _context.Pedidos.First(x => x.IdGuid == pedido.IdGuid).Id;
+                return _context.Pedidos.FirstOrDefault(x => x.IdGuid == pedido.IdGuid).Id;
             }
             catch (Exception ex)
             {

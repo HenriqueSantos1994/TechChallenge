@@ -17,6 +17,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
 
         public async Task<bool> Execute(CriarClienteRequest request)
         {
+            //TODO: Adicionar validado de CPF
             var cliente = new Cliente()
             {
                 CPF = request.CPF,

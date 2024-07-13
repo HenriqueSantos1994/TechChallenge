@@ -19,6 +19,10 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
         public async Task<bool> Execute(AtualizarProdutoRequest request)
         {
             var categoria = _categoriaRepository.GetByName(request.NomeCategoria);
+
+            if (categoria is null)
+                return false;
+
             var produto = new Produto()
             {
                 Id = request.Id,

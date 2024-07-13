@@ -15,6 +15,10 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
         public async Task<bool> Execute(int id)
         {
             var produto = _produtoRepository.GetById(id);
+
+            if(produto is null)
+                return false;
+
             await _produtoRepository.Delete(produto);
 
             return true;

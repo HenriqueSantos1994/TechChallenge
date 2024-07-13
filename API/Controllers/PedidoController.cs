@@ -27,6 +27,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
         {
             try
             {
+                //TODO: Erro ao cadastrar pedido
                 var result = await _criarPedido.Execute(request);
                 return Ok(result);
             }

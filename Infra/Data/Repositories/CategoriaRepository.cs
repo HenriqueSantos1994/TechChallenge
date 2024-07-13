@@ -28,7 +28,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
         {
             try
             {
-                return _context.Categorias.First(x => x.Nome == nome);
+                return _context.Categorias.FirstOrDefault(x => x.Nome == nome);
             }
             catch (Exception ex)
             {

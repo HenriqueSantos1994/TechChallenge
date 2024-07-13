@@ -20,10 +20,15 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
 
         public IList<ProdutoResponse> Execute(string request)
         {
+            var result = new List<ProdutoResponse>();
             var categoria = _categoriaRepository.GetByName(request);
-            var result = _produtoRepository.GetByCategoria(categoria.Id);
 
-            return _mapper.Map<IList<ProdutoResponse>>(result);
+            if (categoria is null)
+                return result;
+
+            var produtos = _produtoRepository.GetByCategoria(categoria.Id);
+
+            return _mapper.Map<IList<ProdutoResponse>>(produtos);
         }
     }
 }
