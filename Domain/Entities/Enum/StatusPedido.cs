@@ -2,18 +2,18 @@
 
 namespace FIAP.TechChallenge.ByteMeBurguer.Domain.Entities.Enum
 {
-    public enum StatusPedidoEnum
+    public enum StatusPedido
     {
         [Description("Recebido")]
-        Recebido,
+        Recebido = 1,
 
         [Description("Em Preparação")]
-        EmPreparacao,
+        EmPreparacao = 2,
 
         [Description("Pronto")]
-        Pronto,
+        Pronto = 3,
 
         [Description("Finalizado")]
-        Finalizado
+        Finalizado = 4
     }
 }

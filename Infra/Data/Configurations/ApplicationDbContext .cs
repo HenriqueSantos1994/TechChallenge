@@ -12,6 +12,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations
         public DbSet<FormaPagamento> FormasPagamento { get; set; }
         public DbSet<Produto> Produtos { get; set; }
         public DbSet<Pedido> Pedidos { get; set; }
+        public DbSet<ItemDePedido> ItensDePedido { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -27,20 +28,18 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations
             modelBuilder.Entity<Produto>()
                 .Property(x => x.Id).ValueGeneratedOnAdd();
 
-            modelBuilder.Entity<Categoria>()
-                .Property(x => x.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<ItemDePedido>()
+                .HasKey(ip => new { ip.PedidoId, ip.ProdutoId });
 
-            //modelBuilder.Entity<Categoria>().HasData(
-            //    new Categoria { Id = 1, Nome = "Lanche" });
-            //modelBuilder.Entity<Categoria>().HasData(
-            //    new Categoria { Id = 2, Nome = "Acompanhamento" });
-            //modelBuilder.Entity<Categoria>().HasData(
-            //    new Categoria { Id = 3, Nome = "Bebida" });
-            //modelBuilder.Entity<Categoria>().HasData(
-            //    new Categoria { Id = 4, Nome = "Sobremesa" });
+            modelBuilder.Entity<ItemDePedido>()
+                .HasOne(ip => ip.Pedido)
+                .WithMany(p => p.ItensDePedido)
+                .HasForeignKey(ip => ip.PedidoId);
 
-            //modelBuilder.Entity<FormaPagamento>().HasData(
-            //    new FormaPagamento { Id = 1, Nome = "Mercado Pago" });
+            modelBuilder.Entity<ItemDePedido>()
+                .HasOne(ip => ip.Produto)
+                .WithMany()
+                .HasForeignKey(ip => ip.ProdutoId);
 
             base.OnModelCreating(modelBuilder);
         }

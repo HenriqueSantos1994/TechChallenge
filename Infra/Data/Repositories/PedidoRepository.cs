@@ -22,8 +22,8 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
                 return _context.Pedidos
                     .Include(x => x.Cliente)
                     .Include(x => x.FormaPagamento)
-                    .Include(x => x.Produtos)
-                        .ThenInclude(p => p.CategoriaProduto)
+                    .Include(x => x.ItensDePedido)
+                        .ThenInclude(y => y.Produto)
                     .ToList();
             }
             catch (Exception ex)
@@ -39,8 +39,6 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
                 return _context.Pedidos
                     .Include(x => x.Cliente)
                     .Include(x => x.FormaPagamento)
-                    .Include(x => x.Produtos)
-                        .ThenInclude(p => p.CategoriaProduto)
                     .FirstOrDefault(x => x.Id == Id);
             }
             catch (Exception ex)
@@ -49,16 +47,14 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             }
         }
 
-        public IList<Pedido> GetByStatus(StatusPedidoEnum status)
+        public IList<Pedido> GetByStatus(StatusPedido status)
         {
             try
             {
                 return _context.Pedidos
                     .Include(x => x.Cliente)
                     .Include(x => x.FormaPagamento)
-                    .Include(x => x.Produtos)
-                        .ThenInclude(p => p.CategoriaProduto)
-                    .Where(x => x.StatusPedido == (int)status).ToList();
+                    .Where(x => x.StatusPedido == status).ToList();
             }
             catch (Exception ex)
             {
@@ -66,19 +62,55 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Repositories
             }
         }
 
-        public async Task<int> Post(Pedido pedido)
+        public IList<Pedido> GetFiltrados()
         {
             try
             {
-                pedido.IdGuid = Guid.NewGuid();
-                _context.Pedidos.Add(pedido);
-                await _context.SaveChangesAsync();
-
-                return _context.Pedidos.FirstOrDefault(x => x.IdGuid == pedido.IdGuid).Id;
+                return _context.Pedidos
+                    .Include(x => x.Cliente)
+                    .Include(x => x.FormaPagamento)
+                    .Include(x => x.ItensDePedido)
+                        .ThenInclude(y => y.Produto)
+                    .Where(x => x.StatusPedido != StatusPedido.Finalizado)
+                    .OrderBy(x => x.StatusPedido == StatusPedido.Pronto ? 0 :
+                                  x.StatusPedido == StatusPedido.EmPreparacao ? 1 :
+                                  x.StatusPedido == StatusPedido.Recebido ? 2 : 3)
+                    .ThenBy(x => x.DataCriacao)
+                    .ToList();
             }
             catch (Exception ex)
             {
-                throw new Exception($"Erro ao cadastrar pedido. {ex}");
+                throw new Exception($"Erro ao consultar pedidos filtrados. {ex}");
+            }
+        }
+
+        public async Task<Pedido> Post(Pedido pedido)
+        {
+            using (var transaction = await _context.Database.BeginTransactionAsync())
+            {
+                try
+                {
+                    pedido.IdGuid = Guid.NewGuid();
+
+                    _context.Pedidos.Add(pedido);
+                    await _context.SaveChangesAsync();
+
+                    foreach (var item in pedido.ItensDePedido)
+                    {
+                        item.PedidoId = pedido.Id;
+                    }
+
+                    await _context.SaveChangesAsync();
+                    await transaction.CommitAsync();
+
+                    return pedido;
+                }
+                catch (Exception ex)
+                {
+                    // Reverter a transação em caso de erro
+                    await transaction.RollbackAsync();
+                    throw new Exception($"Erro ao cadastrar pedido. {ex.Message}", ex);
+                }
             }
         }
 

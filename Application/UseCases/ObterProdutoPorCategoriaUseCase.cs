@@ -18,7 +18,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
             _mapper = mapper;
         }
 
-        public IList<ProdutoResponse> Execute(string request)
+        public IList<ItensDePedidoResponse> Execute(string request)
         {
             var result = new List<ProdutoResponse>();
             var categoria = _categoriaRepository.GetByName(request);
@@ -28,7 +28,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
 
             var produtos = _produtoRepository.GetByCategoria(categoria.Id);
 
-            return _mapper.Map<IList<ProdutoResponse>>(produtos);
+            return _mapper.Map<IList<ItensDePedidoResponse>>(produtos);
         }
     }
 }
