@@ -6,7 +6,8 @@
       "launchUrl": "swagger",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "SQLServerConnection": "Initial Catalog=ByteMeBurguer; Data Source=LAPTOP-EDFM6QIB\\SQLEXPRESS;TrustServerCertificate=True; Persist Security Info=True;User ID=techchallenge;Password=techchallenge"
+        "SQLServerConnection": "Initial Catalog=ByteMeBurguer; Data Source=localhost;TrustServerCertificate=True; Persist Security Info=True;Integrated Security=True;"
+        //"SQLServerConnection": "Initial Catalog=ByteMeBurguer; Data Source=LAPTOP-EDFM6QIB\\SQLEXPRESS;TrustServerCertificate=True; Persist Security Info=True;User ID=techchallenge;Password=techchallenge"
         //"SQLServerConnection": "Initial Catalog=ByteMeBurguer; Data Source=localhost,1450;TrustServerCertificate=True; Persist Security Info=True;User ID=SA;Password=TechChallenge#api"
       },
       "dotnetRunMessages": true,

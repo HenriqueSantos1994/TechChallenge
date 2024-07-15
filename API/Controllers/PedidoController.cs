@@ -11,20 +11,22 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
         private readonly IObterPedidosUseCase _obterPedidos;
         private readonly IObterPedidosFiltradosUseCase _obterPedidosFiltrados;
         private readonly IObterPedidoPorIdUseCase _obterPedidoPorId;
+        private readonly IObterStatusPedidoPorIdUseCase _obterStatusPedidoPorId;
         private readonly ICriarPedidoUseCase _criarPedido;
-        //private readonly IObterStatusPagamentoPedidoUseCase _obterStatusPagamentoPedido;
         private readonly IAtualizarStatusPedidoUseCase _atualizarStatusPedido;
 
         public PedidoController(
             IObterPedidosUseCase obterPedidos,
             IObterPedidosFiltradosUseCase obterPedidosFiltrados,
             IObterPedidoPorIdUseCase obterPedidoPorId,
+            IObterStatusPedidoPorIdUseCase obterStatusPedidoPorIdUseCase,
             ICriarPedidoUseCase criarPedido,
             IAtualizarStatusPedidoUseCase atualizarStatusPedido)
         {
             _obterPedidos = obterPedidos;
             _obterPedidosFiltrados = obterPedidosFiltrados;
             _obterPedidoPorId = obterPedidoPorId;
+            _obterStatusPedidoPorId = obterStatusPedidoPorIdUseCase;
             _criarPedido = criarPedido;
             _atualizarStatusPedido = atualizarStatusPedido;
         }
@@ -76,6 +78,20 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
             try
             {
                 var result = _obterPedidosFiltrados.Execute();
+                return Ok(result);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpGet("StatusPedido/{Id}")]
+        public IActionResult ObterStatusPedidoPorId(int Id)
+        {
+            try
+            {
+                var result = _obterStatusPedidoPorId.Execute(Id);
                 return Ok(result);
             }
             catch (Exception ex)

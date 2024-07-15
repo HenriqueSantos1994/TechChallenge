@@ -5,7 +5,7 @@
         public int Id { get; set; }
         public Guid IdGuid { get; set; }
         public DateTime? DataCriacao { get; set; }
-        public int StatusPedido { get; set; }
+        public string StatusPedido { get; set; }
         public decimal ValorTotal
         {
             get { return ItensDePedido?.Sum(item => item.Subtotal) ?? 0; }
