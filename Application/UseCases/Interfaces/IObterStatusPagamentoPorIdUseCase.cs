@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces
 {
-    public interface IObterStatusPedidoPorIdUseCase : IUseCase<int, StatusPedidoResponse>
+    public interface IObterStatusPagamentoPorIdUseCase : IUseCase<int, StatusPagamentoResponse>
     {
     }
 }

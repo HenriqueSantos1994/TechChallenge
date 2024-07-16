@@ -14,9 +14,10 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations
             CreateMap<Pedido, PedidoResponse>()
                 .ForMember(dest => dest.ItensDePedido, opt => opt.MapFrom(src => src.ItensDePedido))
                 .ForMember(dest => dest.StatusPedido, opt => opt.MapFrom(src => src.StatusPedido.GetDescription()))
+                .ForMember(dest => dest.StatusPagamento, opt => opt.MapFrom(src => src.StatusPagamento.GetDescription()))
                 .ReverseMap();
-            CreateMap<Pedido, StatusPedidoResponse>()
-                .ForMember(dest => dest.StatusPedido, opt => opt.MapFrom(src => src.StatusPedido.GetDescription()))
+            CreateMap<Pedido, StatusPagamentoResponse>()
+                .ForMember(dest => dest.StatusPagamento, opt => opt.MapFrom(src => src.StatusPagamento.GetDescription()))
                 .ReverseMap();
             CreateMap<ItemDePedido, ItensDePedidoResponse>()
                .ForMember(dest => dest.Nome, opt => opt.MapFrom(src => src.Produto.Nome))

@@ -13,9 +13,9 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Domain.Entities.Enum
         Recebido = 0,
 
         [Description("Aprovado")]
-        EmPreparacao = 2,
+        EmPreparacao = 1,
 
         [Description("Recusado")]
-        Pronto = 3
+        Pronto = 2
     }
 }

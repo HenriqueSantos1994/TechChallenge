@@ -11,7 +11,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
         private readonly IObterPedidosUseCase _obterPedidos;
         private readonly IObterPedidosFiltradosUseCase _obterPedidosFiltrados;
         private readonly IObterPedidoPorIdUseCase _obterPedidoPorId;
-        private readonly IObterStatusPedidoPorIdUseCase _obterStatusPedidoPorId;
+        private readonly IObterStatusPagamentoPorIdUseCase _obterStatusPagamentoPorId;
         private readonly ICriarPedidoUseCase _criarPedido;
         private readonly IAtualizarStatusPedidoUseCase _atualizarStatusPedido;
 
@@ -19,14 +19,14 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
             IObterPedidosUseCase obterPedidos,
             IObterPedidosFiltradosUseCase obterPedidosFiltrados,
             IObterPedidoPorIdUseCase obterPedidoPorId,
-            IObterStatusPedidoPorIdUseCase obterStatusPedidoPorIdUseCase,
+            IObterStatusPagamentoPorIdUseCase obterStatusPagamentoPorIdUseCase,
             ICriarPedidoUseCase criarPedido,
             IAtualizarStatusPedidoUseCase atualizarStatusPedido)
         {
             _obterPedidos = obterPedidos;
             _obterPedidosFiltrados = obterPedidosFiltrados;
             _obterPedidoPorId = obterPedidoPorId;
-            _obterStatusPedidoPorId = obterStatusPedidoPorIdUseCase;
+            _obterStatusPagamentoPorId = obterStatusPagamentoPorIdUseCase;
             _criarPedido = criarPedido;
             _atualizarStatusPedido = atualizarStatusPedido;
         }
@@ -86,12 +86,12 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
             }
         }
 
-        [HttpGet("StatusPedido/{Id}")]
+        [HttpGet("StatusPagamento/{Id}")]
         public IActionResult ObterStatusPedidoPorId(int Id)
         {
             try
             {
-                var result = _obterStatusPedidoPorId.Execute(Id);
+                var result = _obterStatusPagamentoPorId.Execute(Id);
                 return Ok(result);
             }
             catch (Exception ex)
