@@ -13,6 +13,6 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Domain.Entities
         public DateTime? DataPronto { get; set; }
         public DateTime? DataEncerrado { get; set; }
         public StatusPedido StatusPedido { get; set; }
-        
+        public StatusPagamento StatusPagamento { get; set; }
     }
 }
