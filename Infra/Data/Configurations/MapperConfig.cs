@@ -25,6 +25,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Infra.Data.Configurations
                .ForMember(dest => dest.Categoria, opt => opt.MapFrom(src => src.Produto.CategoriaProduto.Nome))
                .ForMember(dest => dest.ValorUnitario, opt => opt.MapFrom(src => src.Produto.Valor))
                .ReverseMap();
+            CreateMap<Produto, ProdutoResponse>().ReverseMap();
         }
     }
 }

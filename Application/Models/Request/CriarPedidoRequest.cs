@@ -15,9 +15,6 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.Models.Request
         [Required(ErrorMessage = "É obrigatório informar uma FORMA DE PAGAMENTO para finalizar o pedido.")]
         [JsonPropertyName("idFormaPagamento")]
         public int IdFormaPagamento { get; set; }
-
-        [JsonPropertyName("valorTotal")]
-        public double ValorTotal { get; set; }
     }
 
 }
