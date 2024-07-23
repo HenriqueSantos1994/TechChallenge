@@ -2,11 +2,6 @@
 using FIAP.TechChallenge.ByteMeBurguer.Application.Models.Response;
 using FIAP.TechChallenge.ByteMeBurguer.Application.UseCases.Interfaces;
 using FIAP.TechChallenge.ByteMeBurguer.Domain.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
 {

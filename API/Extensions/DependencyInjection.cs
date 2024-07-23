@@ -46,6 +46,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Extensions
             services.AddTransient<IObterPedidosFiltradosUseCase, ObterPedidosFiltradosUseCase>();
             services.AddTransient<IObterProdutoPorCategoriaUseCase, ObterProdutoPorCategoriaUseCase>();
             services.AddTransient<IRemoverProdutoUseCase, RemoverProdutoUseCase>();
+            services.AddTransient<IAtualizarStatusPagamentoUseCase, AtualizarStatusPagamentoUseCase>();
 
             //Infra Data
             services.AddDbContext<ApplicationDbContext>(options =>
