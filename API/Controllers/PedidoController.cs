@@ -119,7 +119,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
 
         [HttpPut]
         [Route("StatusPagamento")]
-        public async Task<IActionResult> Notificacao([FromBody] AtualizarStatusPagamentoRequest request)
+        public async Task<IActionResult> AtualizarStatusPagamento([FromBody] AtualizarStatusPagamentoRequest request)
         {
             try
             {
