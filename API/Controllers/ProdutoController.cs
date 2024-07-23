@@ -46,6 +46,10 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
             try
             {
                 var result = await _criarProduto.Execute(request);
+
+                if(!result)
+                    return BadRequest("Categoria informada inválida!");
+
                 return Ok(result);
             }
             catch (Exception ex)
@@ -60,6 +64,10 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
             try
             {
                 var result = await _atualizarProduto.Execute(request);
+
+                if (!result)
+                    return BadRequest("Categoria informada inválida!");
+
                 return Ok(result);
             }
             catch (Exception ex)
@@ -74,6 +82,10 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
             try
             {
                 var result = await _removerProduto.Execute(id);
+
+                if(!result)
+                    return BadRequest("Produto não encontrado.");
+
                 return Ok(result);
             }
             catch (Exception ex)

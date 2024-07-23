@@ -60,7 +60,8 @@ namespace FIAP.TechChallenge.ByteMeBurguer.Application.UseCases
                 FormaPagamento = formaPagamento,
                 ItensDePedido = itensDePedido,
                 DataCriacao = DateTime.Now,
-                StatusPedido = StatusPedido.Recebido
+                StatusPedido = StatusPedido.Recebido,
+                StatusPagamento = StatusPagamento.Pendente
             };
 
             var result = await _pedidoRepository.Post(pedido);

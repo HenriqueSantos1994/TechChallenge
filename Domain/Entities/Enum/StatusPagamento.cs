@@ -1,21 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel;
 
 namespace FIAP.TechChallenge.ByteMeBurguer.Domain.Entities.Enum
 {
     public enum StatusPagamento
     {
         [Description("Pendente")]
-        Recebido = 0,
+        Pendente = 0,
 
         [Description("Aprovado")]
-        EmPreparacao = 1,
+        Aprovado = 1,
 
         [Description("Recusado")]
-        Pronto = 2
+        Recusado = 2
     }
 }

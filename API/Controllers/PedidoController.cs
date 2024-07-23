@@ -14,6 +14,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
         private readonly IObterStatusPagamentoPorIdUseCase _obterStatusPagamentoPorId;
         private readonly ICriarPedidoUseCase _criarPedido;
         private readonly IAtualizarStatusPedidoUseCase _atualizarStatusPedido;
+        private readonly IAtualizarStatusPagamentoUseCase _atualizarStatusPagamento;
 
         public PedidoController(
             IObterPedidosUseCase obterPedidos,
@@ -21,7 +22,8 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
             IObterPedidoPorIdUseCase obterPedidoPorId,
             IObterStatusPagamentoPorIdUseCase obterStatusPagamentoPorIdUseCase,
             ICriarPedidoUseCase criarPedido,
-            IAtualizarStatusPedidoUseCase atualizarStatusPedido)
+            IAtualizarStatusPedidoUseCase atualizarStatusPedido,
+            IAtualizarStatusPagamentoUseCase atualizarStatusPagamento)
         {
             _obterPedidos = obterPedidos;
             _obterPedidosFiltrados = obterPedidosFiltrados;
@@ -29,6 +31,7 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
             _obterStatusPagamentoPorId = obterStatusPagamentoPorIdUseCase;
             _criarPedido = criarPedido;
             _atualizarStatusPedido = atualizarStatusPedido;
+            _atualizarStatusPagamento = atualizarStatusPagamento;
         }
 
         [HttpPost]
@@ -106,6 +109,21 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
             try
             {
                 _atualizarStatusPedido.Execute(request);
+                return NoContent();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex);
+            }
+        }
+
+        [HttpPut]
+        [Route("StatusPagamento")]
+        public async Task<IActionResult> AtualizarStatusPagamento([FromBody] AtualizarStatusPagamentoRequest request)
+        {
+            try
+            {
+                await _atualizarStatusPagamento.Execute(request);
                 return NoContent();
             }
             catch (Exception ex)
