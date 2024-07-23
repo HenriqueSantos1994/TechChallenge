@@ -24,7 +24,6 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
         {
             try
             {
-                //TODO: Retornar lista vazia?
                 var result = _obterClientePorCpf.Execute(cpf);
                 return Ok(result);
             }
@@ -37,7 +36,6 @@ namespace FIAP.TechChallenge.ByteMeBurguer.API.Controllers
         [HttpPost]
         public async Task<IActionResult> CriarClientes(CriarClienteRequest request)
         {
-            //TODO: Adicionar validador de CPF
             try
             {
                 var result = await _criarClientes.Execute(request);
