@@ -1,11 +1,51 @@
 # Tech Challenge - FIAP - Grupo 12
 
 ## Descrição
-Este repositório contém o codigo-fonte de uma api de garenciamento para lanchonete, conforme desafio técnico proposto nas
-disciplinas de Arquitetura de Software da Pós Tech - FIAP. Esta API está desenvolvida em .NET 8, e tem por objetivo gerenciar as principais operações de uma lanchonete,
-considerando o cadastro de clientes, produtos, criação e acompanhamento de pedidos, e pagamentos.
+Este repositório contém o código fonte de uma api de garenciamento para lanchonete, conforme desafio técnico proposto nas disciplinas de Arquitetura de Software da Pós Tech - FIAP. Esta API está desenvolvida em .NET 8, e tem por objetivo gerenciar as principais operações de uma lanchonete, considerando o cadastro de clientes, produtos, criação e acompanhamento de pedidos, e pagamentos.
 
-## Inicialização
+## Fase 2 - Clean Architecture e Kubernetes
+
+### a. Desenho da arquitetura 
+
+i. Os requisitos do negócio (problema).
+A arquitetura criada usou como base a arquitetura limpa (Clean Architecture) proposta por Robert Martin (Uncle Bob). A arquitetura referência segue abaixo:
+
+<p align="center">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="Documentação/CleanArchitecture/Clean1.png" width="500"/>
+</p>
+
+Esta é a forma como foi implementada no nosso projeto .Net:
+
+<p align="center">
+  <img src="Documentação/CleanArchitecture/Clean2.png" width="400"/>
+</p>
+
+Esta é a forma representada em camadas como foi implementada no nosso projeto .Net
+
+<p align="center">
+  <img src="Documentação/CleanArchitecture/Clean3.png" width="700"/>
+</p>
+
+ii. Os requisitos de infraestrutura - minikube
+
+*[INCLUIR DIAGRAMA KUBERNETES AQUI]*
+
+### b. APIs desenvolvidas:
+b.i. Collection com exemplos de requisições - [Link do Swagger no projeto ou link para download da collection do Postman (JSON)](Documentação/Postman/FIAP.TechChallenge.ByteMeBurguer.API.postman_collection.json)
+
+*[ATUALIZAR ARQUIVO E LINK]*
+
+b.ii Ordem das requisições
+
+### c. Guia completo com todas as instruções para execução do projeto e a ordem de execução das APIs
+#### c.i Sequência de execução dos arquivos Kubernetes
+*[INFORMAR A SEQUÊNCIA DE EXECUÇÃO DO KUBERNETES]*
+
+### d. Link para vídeo demonstrando a arquitetura desenvolvida na nuvem ou localmente
+[Vídeo](www.youtube.com)
+*[INCLUIR LINK DO VÍDEO]*
+
+## Fase 1 (finalizada) - Inicialização
 
 ### Pré-Requisitos
 - Docker
