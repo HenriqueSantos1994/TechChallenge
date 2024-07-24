@@ -5,9 +5,39 @@ Este repositório contém o código fonte de uma api de garenciamento para lanch
 
 ## Fase 2 - Clean Architecture e Kubernetes
 
+### Requisitos do negócio (problema).
+
+#### Motivação:  Lanchonete em expansão, porém sem um sistema de pedidos. 
+
+#### Requisitos de alto nível:
+
+Criar um sistema de pedidos para garantir um atendimento melhor e mais rápido.
+
+O sistema deve ser de autoatendimento onde o próprio cliente pode fazer seus pedidos sem precisar interagir com um atendente.
+
+#### Requisitos do sistema:
+
+##### *Pedido*
+
+1. Entrada do sistema onde o cliente pode se identificar com o CPF, se cadastrar com nome e email ou não se identificar indo diretamente ao pedido
+2. Criação do pedido selecionando os produtos do tipo Lanche, Acompanhamento, Bebida ou Sobremesa
+3. Escolha da opção de pagamento e apresentação da interface para realização de pagamento (de início somente um QRCode do mercado livre)
+4. Processamento do retorno da confirmação ou recusa do pagamento
+5. Exibição do detalhe e status do pedido para acompanhamento do cliente
+6. Exibição do novo pedido para a cozinha iniciar o preparo. Status inicial Recebido.
+7. Alteração do status do pedido pela cozinha (Em preparação, Pronto)
+8. Na exibição do detalhe, notificar que o produto está pronto quando a Cozinha altera o status para Pronto
+9. Alteração do status para finalizado pelo atendente que entregou o pedido
+
+##### *Área administrativa*
+
+1. Gestão de clientes (listar clientes)
+2. Gestão de produtos (criar, atualizar, excluir)
+3. Acompanhamento dos pedidos (listar mostrando andamento e tempo de espera)
+
 ### a. Desenho da arquitetura 
 
-i. Os requisitos do negócio (problema).
+#### i. Arquitetura da Solução em .Net
 A arquitetura criada usou como base a arquitetura limpa (Clean Architecture) proposta por Robert Martin (Uncle Bob). A arquitetura referência segue abaixo:
 
 <p align="center">
@@ -26,32 +56,32 @@ Esta é a forma representada em camadas como foi implementada no nosso projeto .
   <img src="Documentação/CleanArchitecture/Clean3.png" width="700"/>
 </p>
 
-ii. Os requisitos de infraestrutura - minikube
+#### ii. Infraestrutura - Kubernetes
 
-*[INCLUIR DIAGRAMA KUBERNETES AQUI]*
+*[TODO - INCLUIR DIAGRAMA KUBERNETES AQUI]*
 
 ### b. APIs desenvolvidas:
 b.i. Collection com exemplos de requisições - [Link do Swagger no projeto ou link para download da collection do Postman (JSON)](Documentação/Postman/FIAP.TechChallenge.ByteMeBurguer.API.postman_collection.json)
 
-*[ATUALIZAR ARQUIVO E LINK]*
+*[TODO - ATUALIZAR ARQUIVO E LINK DO SWAGGER]*
 
 b.ii Ordem das requisições
 
 ### c. Guia completo com todas as instruções para execução do projeto e a ordem de execução das APIs
 #### c.i Sequência de execução dos arquivos Kubernetes
-*[INFORMAR A SEQUÊNCIA DE EXECUÇÃO DO KUBERNETES]*
+*[TODO - INFORMAR A SEQUÊNCIA DE EXECUÇÃO DO KUBERNETES]*
 
 ### d. Link para vídeo demonstrando a arquitetura desenvolvida na nuvem ou localmente
 [Vídeo](www.youtube.com)
-*[INCLUIR LINK DO VÍDEO]*
+*[TODO - INCLUIR LINK DO VÍDEO]*
 
 Sequência do vídeo:
 
 Parte 1 - Arquitetura limpa e projeto .Net ( https://drive.google.com/file/d/1GIBns0Mde1L8R0cQbMXKNrOJC_pNz8zb/view?usp=sharing )
 
-Parte 2 - Exemplo do Postman e da sequência de requisições
+*[TODO]* Parte 2 - Exemplo do Postman e da sequência de requisições
 
-Parte 3 - Arquitetura Kubernetes mostrando a criação dos elementos do Kubernetes e listando o que foi criado (PODs, Services, etc) e mostrando o HPA (Horizontal POD Autoscalling) funcionando.
+*[TODO]* Parte 3 - Arquitetura Kubernetes mostrando a criação dos elementos do Kubernetes e listando o que foi criado (PODs, Services, etc) e mostrando o HPA (Horizontal POD Autoscalling) funcionando.
 
 ## Fase 1 (finalizada) - Inicialização
 
