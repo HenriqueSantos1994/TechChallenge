@@ -44,6 +44,10 @@ b.ii Ordem das requisições
 ### d. Link para vídeo demonstrando a arquitetura desenvolvida na nuvem ou localmente
 [Vídeo](www.youtube.com)
 *[INCLUIR LINK DO VÍDEO]*
+Sequência do vídeo
+Parte 1 - Arquitetura limpa e projeto .Net ( https://drive.google.com/file/d/1GIBns0Mde1L8R0cQbMXKNrOJC_pNz8zb/view?usp=sharing )
+Parte 2 - Exemplo do Postman e da sequência de requisições
+Parte 3 - Arquitetura Kubernetes mostrando a criação dos elementos do Kubernetes e listando o que foi criado (PODs, Services, etc) e mostrando o HPA (Horizontal POD Autoscalling) funcionando.
 
 ## Fase 1 (finalizada) - Inicialização
 
