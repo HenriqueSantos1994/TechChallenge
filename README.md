@@ -66,10 +66,10 @@ b.i. Collection com exemplos de requisições
 - [Link do Environment do Postman (JSON)](Documentação/Postman/Development.postman_environment.json)
 
 b.ii Ordem das requisições
-1. Cliente/CadastrarCliente
-2. Produto/CriarProduto (Lanche)
+1. Produto/CriarProduto (Lanche)
+2. Produto/CriarProduto (Bebida)
 3. Produto/CriarProduto (Acompanhamento)
-4. Produto/CriarProduto (Bebida)
+4. Cliente/CadastrarCliente 
 5. Pedido/CriarPedido
 
 
