@@ -61,11 +61,17 @@ Esta é a forma representada em camadas como foi implementada no nosso projeto .
 *[TODO - INCLUIR DIAGRAMA KUBERNETES AQUI]*
 
 ### b. APIs desenvolvidas:
-b.i. Collection com exemplos de requisições - [Link do Swagger no projeto ou link para download da collection do Postman (JSON)](Documentação/Postman/FIAP.TechChallenge.ByteMeBurguer.API.postman_collection.json)
-
-*[TODO - ATUALIZAR ARQUIVO E LINK DO SWAGGER]*
+b.i. Collection com exemplos de requisições
+- [Link da Collection do Postman (JSON)](Documentação/Postman/FIAP.TechChallenge.ByteMeBurguer.API.postman_collection.json)
+- [Link do Environment do Postman (JSON)](Documentação/Postman/Development.postman_environment.json)
 
 b.ii Ordem das requisições
+1. Produto/CriarProduto (Lanche)
+2. Produto/CriarProduto (Bebida)
+3. Produto/CriarProduto (Acompanhamento)
+4. Cliente/CadastrarCliente 
+5. Pedido/CriarPedido
+
 
 ### c. Guia completo com todas as instruções para execução do projeto e a ordem de execução das APIs
 #### c.i Sequência de execução dos arquivos Kubernetes
