@@ -1,7 +1,9 @@
 # Tech Challenge - FIAP - Grupo 12
 
 ## Descrição
-Este repositório contém o código fonte de uma api de garenciamento para lanchonete, conforme desafio técnico proposto nas disciplinas de Arquitetura de Software da Pós Tech - FIAP. Esta API está desenvolvida em .NET 8, e tem por objetivo gerenciar as principais operações de uma lanchonete, considerando o cadastro de clientes, produtos, criação e acompanhamento de pedidos, e pagamentos.
+Este repositório contém o código fonte de uma api de garenciamento para lanchonete, conforme desafio técnico proposto nas disciplinas de Arquitetura de Software da Pós Tech - FIAP.
+
+A API está desenvolvida em .NET 8, e tem por objetivo gerenciar as principais operações de uma lanchonete, considerando o cadastro de clientes, produtos, criação e acompanhamento de pedidos, e pagamentos.
 
 ## Fase 2 - Clean Architecture e Kubernetes
 
@@ -58,7 +60,9 @@ Esta é a forma representada em camadas como foi implementada no nosso projeto .
 
 #### ii. Infraestrutura - Kubernetes
 
-*[TODO - INCLUIR DIAGRAMA KUBERNETES AQUI]*
+<p align="center">
+  <img src="Documentação/Kubernetes/Kubernetes.png" width="700"/>
+</p>
 
 ### b. APIs desenvolvidas:
 b.i. Collection com exemplos de requisições
@@ -75,7 +79,34 @@ b.ii Ordem das requisições
 
 ### c. Guia completo com todas as instruções para execução do projeto e a ordem de execução das APIs
 #### c.i Sequência de execução dos arquivos Kubernetes
-*[TODO - INFORMAR A SEQUÊNCIA DE EXECUÇÃO DO KUBERNETES]*
+
+```bash
+kubectl apply -f 1-secret-techchallenge-opaque.yaml
+kubectl apply -f 2-deployment-techchallenge-sql.yaml
+kubectl apply -f 3-svc-techchallenge-cluster-ip-sql.yaml
+kubectl apply -f 4-svc-techchallenge-sql-node.yaml
+kubectl apply -f 5-deployment-techchallenge.yaml
+kubectl apply -f 6-svc-techchallenge-node.yaml
+kubectl apply -f 7-hpa-techchellenge.yaml
+kubectl apply -f 8-components.yaml
+```
+
+#### c.ii Após a inicialização dos pods, acesse o swagger da aplicação para ter acesso a todos os endpoints
+
+   > [http://localhost:31300/swagger/index.html](http://localhost:31300/swagger/index.html)
+
+#### c.iii Sequência de execução para deletar toda a infra do Kubernetes
+
+```bash
+kubectl delete -f 8-components.yaml
+kubectl delete -f 7-hpa-techchellenge.yaml
+kubectl delete -f 6-svc-techchallenge-node.yaml
+kubectl delete -f 5-deployment-techchallenge.yaml
+kubectl delete -f 4-svc-techchallenge-sql-node.yaml
+kubectl delete -f 3-svc-techchallenge-cluster-ip-sql.yaml
+kubectl delete -f 2-deployment-techchallenge-sql.yaml
+kubectl delete -f 1-secret-techchallenge-opaque.yaml
+```
 
 ### d. Link para vídeo demonstrando a arquitetura desenvolvida na nuvem ou localmente
 [Vídeo](www.youtube.com)
