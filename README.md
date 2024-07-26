@@ -120,36 +120,3 @@ Parte 1 - Arquitetura limpa e projeto .Net ( https://drive.google.com/file/d/1GI
 
 *[TODO]* Parte 3 - Arquitetura Kubernetes mostrando a criação dos elementos do Kubernetes e listando o que foi criado (PODs, Services, etc) e mostrando o HPA (Horizontal POD Autoscalling) funcionando.
 
-## Fase 1 (finalizada) - Inicialização
-
-### Pré-Requisitos
-- Docker
-- .NET SDK
-- Opcionalmente, uma IDE como o Visual Studio ou VSCode
-
-
-### Configuração
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/HenriqueSantos1994/TechChallenge.git
-    ```
-
-2. Inicie o serviço utilizando Docker:
-
-   ```bash
-    docker-compose up -d
-   ```
-
-3. Acesse o swagger da aplicação para ter acesso a todos os endpoints
-
-   > [http://localhost:5001/swagger/index.html](http://localhost:5001/swagger/index.html)
-
-
-4. Para finalizar o serviço utilizando docker, execute:
-
-   ```bash
-    docker-compose down
-   ```
-
-### Collections
-//TODO: Insere guia das coleções do postman
