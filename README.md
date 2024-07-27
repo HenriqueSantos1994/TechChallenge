@@ -113,6 +113,7 @@ kubectl delete -f 1-secret-techchallenge-opaque.yaml
 *[TODO - INCLUIR LINK DO VÍDEO]*
 
 Sequência do vídeo:
+
 Introdução - Contexto e tecnologias utilizadas (https://drive.google.com/file/d/1IYEeasOjF7xk0HKITX9nlFjqL6occ9i9/view?usp=sharing)
 
 Parte 1 - Arquitetura limpa e projeto .Net ( https://drive.google.com/file/d/1GIBns0Mde1L8R0cQbMXKNrOJC_pNz8zb/view?usp=sharing )
