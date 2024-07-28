@@ -118,7 +118,7 @@ Introdução - Contexto e tecnologias utilizadas (https://drive.google.com/file/
 
 Parte 1 - Arquitetura limpa e projeto .Net ( https://drive.google.com/file/d/1GIBns0Mde1L8R0cQbMXKNrOJC_pNz8zb/view?usp=sharing )
 
-Parte 2 - Exemplo do Postman e da sequência de requisições (https://drive.google.com/file/d/1G_NUqyMsC_viTX7Y3JqBMCBy52o4_jod/view?usp=sharing)
+Parte 2 - Arquitetura infra - Kubernetes (https://1drv.ms/v/s!AnIYPd0uzQRchNBwKqWH8YfZ5DhUaQ?e=DqHNVt)
 
-*[TODO]* Parte 3 - Arquitetura Kubernetes mostrando a criação dos elementos do Kubernetes e listando o que foi criado (PODs, Services, etc) e mostrando o HPA (Horizontal POD Autoscalling) funcionando.
+Parte 3 - Exemplo do Postman e da sequência de requisições (https://drive.google.com/file/d/1G_NUqyMsC_viTX7Y3JqBMCBy52o4_jod/view?usp=sharing)
 

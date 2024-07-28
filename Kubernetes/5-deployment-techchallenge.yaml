@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
         - name: pod-techchallenge
-          image: henriquesantos9094/techchallenge:latest
+          image: henriquesantos9094/techchallenge:2.0
           ports:
             - containerPort: 8080
           env:
