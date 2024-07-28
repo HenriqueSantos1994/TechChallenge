@@ -108,17 +108,18 @@ kubectl delete -f 2-deployment-techchallenge-sql.yaml
 kubectl delete -f 1-secret-techchallenge-opaque.yaml
 ```
 
-### d. Link para vídeo demonstrando a arquitetura desenvolvida na nuvem ou localmente
-[Vídeo](www.youtube.com)
-*[TODO - INCLUIR LINK DO VÍDEO]*
+### d. [Link para vídeo demonstrando a arquitetura desenvolvida localmente
+
+[Veja aqui o vídeo completo](https://www.youtube.com/watch?v=AldG-c2Itg4)
 
 Sequência do vídeo:
 
-Introdução - Contexto e tecnologias utilizadas (https://drive.google.com/file/d/1IYEeasOjF7xk0HKITX9nlFjqL6occ9i9/view?usp=sharing)
+Introdução - Contexto e tecnologias utilizadas
 
-Parte 1 - Arquitetura limpa e projeto .Net ( https://drive.google.com/file/d/1GIBns0Mde1L8R0cQbMXKNrOJC_pNz8zb/view?usp=sharing )
+Parte 1 - Arquitetura limpa e projeto .Net
 
-Parte 2 - Arquitetura infra - Kubernetes (https://1drv.ms/v/s!AnIYPd0uzQRchNBwKqWH8YfZ5DhUaQ?e=DqHNVt)
+Parte 2 - Exemplo do Postman e da sequência de requisições
 
-Parte 3 - Exemplo do Postman e da sequência de requisições (https://drive.google.com/file/d/1G_NUqyMsC_viTX7Y3JqBMCBy52o4_jod/view?usp=sharing)
+Parte 3 - Arquitetura infra - Kubernetes
 
+Conclusão
